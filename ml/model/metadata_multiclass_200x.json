@@ -1,0 +1,25 @@
+{
+  "arch": "resnet18",
+  "task": "multiclass_8",
+  "classes": [
+    "adenosis",
+    "ductal_carcinoma",
+    "fibroadenoma",
+    "lobular_carcinoma",
+    "mucinous_carcinoma",
+    "papillary_carcinoma",
+    "phyllodes_tumor",
+    "tubular_adenoma"
+  ],
+  "img_size": 224,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ]
+}
