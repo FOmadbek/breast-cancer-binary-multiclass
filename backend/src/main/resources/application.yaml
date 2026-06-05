@@ -20,3 +20,8 @@ server:
 ml:
   service:
     url: http://localhost:8000
+http:
+  encoding:
+    charset: UTF-8
+    enabled: true
+    force: true

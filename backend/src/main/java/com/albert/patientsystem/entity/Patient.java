@@ -1,5 +1,5 @@
 package com.albert.patientsystem.entity;
-
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,7 +21,8 @@ public class Patient {
 
     @Column(nullable = false, unique = true)
     private String passportNumber;
-
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DiagnosticRecord> records;
     public Patient() {}                    // JPA needs a no-arg constructor
 
     public Long getId() { return id; }

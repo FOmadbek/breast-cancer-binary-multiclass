@@ -33,7 +33,15 @@ public class DiagnosticRecord {
     public void onCreate() {               // auto-set timestamp on insert
         this.createdAt = LocalDateTime.now();
     }
+    // Add these fields to track doctor validation
+    private Boolean verified = false;
+    private String correctedLabel;
 
+    // Add Getters and Setters for them:
+    public Boolean getVerified() { return verified; }
+    public void setVerified(Boolean verified) { this.verified = verified; }
+    public String getCorrectedLabel() { return correctedLabel; }
+    public void setCorrectedLabel(String correctedLabel) { this.correctedLabel = correctedLabel; }
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public Patient getPatient() { return patient; }

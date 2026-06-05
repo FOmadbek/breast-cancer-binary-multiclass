@@ -16,6 +16,8 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import java.io.IOException;
 import java.time.LocalDate;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class DiagnosisService {
@@ -78,6 +80,9 @@ public class DiagnosisService {
         } catch (IOException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Could not read uploaded image");
         }
+    }
+    public Page<DiagnosticRecord> searchRecords(String label, LocalDate from, LocalDate to, Pageable pageable) {
+        return recordRepo.filter(label, from, to, pageable);
     }
 
 
