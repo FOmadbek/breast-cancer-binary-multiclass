@@ -75,6 +75,9 @@ uvicorn app:app --port 8000
 # Backend (requires MySQL running on :3306)
 cd backend
 mvnw spring-boot:run
+# Frontend
+cd frontend/src
+npm run dev
 ```
 
 ## Dataset
